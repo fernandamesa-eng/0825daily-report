@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Reporte Diario - Mason-Taylor Construction</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>MASON-TAYLOR CONSTRUCTION</h1>
+  <h2>Foreman Daily Report</h2>
+
+  <form id="dailyReportForm">
+    <label>Nombre:
+      <input type="text" name="nombre" required>
+    </label>
+
+    <label>Fecha:
+      <input type="date" name="fecha" required>
+    </label>
+
+    <label>Ubicación:</label>
+    <select name="ubicacion" required>
+      <option value="">Selecciona una ubicación</option>
+      <option value="10744 Lindbrook">10744 Lindbrook</option>
+      <option value="122 N Clark">122 N Clark</option>
+      <option value="850 Inglewood">850 Inglewood</option>
+      <option value="2021 Ernest">2021 Ernest</option>
+      <option value="823 June St">823 June St</option>
+      <option value="6213 Montezuma">6213 Montezuma</option>
+      <option value="1079 Briarcliff">1079 Briarcliff</option>
+      <option value="29636 Cuthbert">29636 Cuthbert</option>
+      <option value="5511 Corning">5511 Corning</option>
+      <option value="842 Galloway">842 Galloway</option>
+      <option value="Nuevo">Nuevo</option>
+    </select>
+
+
+<label for="trade">Trade</label>
+<select id="trade" name="trade" required>
+  <option value="">Selecciona una opción</option>
+  <option>Demo/Hauling</option>
+  <option>Dirlling</option>
+  <option>Files & Caissons</option>
+  <option>Shoring</option>
+  <option>Grading & Earthwork</option>
+  <option>Foundation</option>
+  <option>Rough Framing</option>
+  <option>Structural Steel</option>
+  <option>Doors & Windows Installation</option>
+  <option>Waterproofing & Drainage</option>
+  <option>Drywall</option>
+  <option>Finish Carpentry</option>
+  <option>Site Work/Hardscape</option>
+  <option>Supervision</option>
+  <option>Clean Job site</option>
+</select>
+
+
+    <h3>Empleados en el trabajo:</h3>
+    <div id="empleados">
+      <div>
+        <select name="empleado[]" required>
+          <option value="">Selecciona empleado</option>
+          <option value="Angel Valdivia">Angel Valdivia</option>
+          <option value="Boris Ramirez">Boris Ramirez</option>
+          <option value="Camilo Rodriguez">Camilo Rodriguez</option>
+          <option value="Carlos Boror">Carlos Boror</option>
+          <option value="Edilberto Duarte">Edilberto Duarte</option>
+          <option value="Ernesto Orozco">Ernesto Orozco</option>
+          <option value="Esdra Zuniga">Esdra Zuniga</option>
+          <option value="Francisco Meza">Francisco Meza</option>
+          <option value="Gabriel Castillo">Gabriel Castillo</option>
+          <option value="Gabriel Mejia">Gabriel Mejia</option>
+          <option value="Genaro Nogales">Genaro Nogales</option>
+          <option value="Gerardo Guillen">Gerardo Guillen</option>
+          <option value="Hugo Duarte">Hugo Duarte</option>
+          <option value="Jorge Caballero">Jorge Caballero</option>
+          <option value="Jorge Cardona">Jorge Cardona</option>
+          <option value="Jorge Pena">Jorge Pena</option>
+          <option value="Jose Lopez">Jose Lopez</option>
+          <option value="Julio Duarte">Julio Duarte</option>
+          <option value="Lorenzo Mateo">Lorenzo Mateo</option>
+          <option value="Luis Lopez">Luis Lopez</option>
+          <option value="Manuel Rojas">Manuel Rojas</option>
+          <option value="Mateo Mateo">Mateo Mateo</option>
+          <option value="Raul Ordonez">Raul Ordonez</option>
+          <option value="Ricardo Martinez">Ricardo Martinez</option>
+          <option value="Rodolfo Lopez">Rodolfo Lopez</option>
+          <option value="Virbes Mateo">Virbes Mateo</option>
+          <option value="New Guy">New Guy</option>
+        </select>
+        <input type="time" name="clockIn[]" placeholder="Clock In" required>
+        <input type="time" name="startBreak[]" placeholder="Start Break">
+        <input type="time" name="endBreak[]" placeholder="End Break">
+        <input type="time" name="clockOut[]" placeholder="Clock Out" required>
+      </div>
+    </div>
+
+    <button type="button" onclick="agregarEmpleado()">+ Agregar empleado</button>
+
+    <h3>¿Alquiler de equipo?</h3>
+    <label style="margin-right: 15px;">
+      <input type="radio" name="equipo" value="Sí" required> Sí
+    </label>
+    <label>
+      <input type="radio" name="equipo" value="No"> No
+    </label>
+
+    <h3>¿Inspecciones?</h3>
+    <label style="margin-right: 15px;">
+      <input type="radio" name="inspeccion" value="Sí" required> Sí
+    </label>
+    <label>
+      <input type="radio" name="inspeccion" value="No"> No
+    </label>
+
+    <h3>¿Compraste material?</h3>
+    <label style="margin-right: 15px;">
+      <input type="radio" name="material" value="Sí" required> Sí
+    </label>
+    <label>
+      <input type="radio" name="material" value="No"> No
+    </label>
+
+    <label>Alcance del trabajo realizado:</label>
+    <textarea name="alcance" rows="4"></textarea>
+
+    <label>Cambios solicitados por el cliente:</label>
+    <textarea name="cambios" rows="4"></textarea>
+
+    <button type="submit">Generar PDF</button>
+  </form>
+
+  <!-- Librerías necesarias -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
+  
+  <!-- Tu script principal -->
+  <script src="script.js"></script>
+</body>
+</html>

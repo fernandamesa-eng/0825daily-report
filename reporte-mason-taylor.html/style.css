@@ -1,0 +1,146 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 40px;
+  background-color: #f2f2f2;
+  color: #333;
+}
+
+h1, h2 {
+  text-align: center;
+  color: #004080;
+}
+
+form {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 900px;
+  margin: auto;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="time"],
+textarea,
+select {
+  width: 100%;
+  padding: 6px;
+  margin-top: 4px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #0066cc;
+  outline: none;
+  box-shadow: 0 0 3px #80bdff;
+}
+
+textarea {
+  resize: vertical;
+}
+
+#empleados > div {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr) auto; /* auto para botón eliminar */
+  gap: 10px;
+  margin-bottom: 15px;
+  align-items: center;
+}
+
+#empleados input[type="text"],
+#empleados input[type="time"] {
+  width: 100%;
+}
+
+/* Botones principales (submit, agregar empleado) */
+button[type="submit"],
+button[type="button"]:not(.btn-eliminar) {
+  background-color: #004080;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+button[type="submit"]:hover,
+button[type="button"]:not(.btn-eliminar):hover {
+  background-color: #0066cc;
+}
+
+/* Botón de eliminar */
+.btn-eliminar {
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.btn-eliminar svg {
+  width: 12px;
+  height: 12px;
+  stroke: red;
+}
+
+.btn-eliminar:hover {
+  background-color: #ffe6e6;
+  border-radius: 4px;
+}
+
+h3 {
+  margin-top: 30px;
+  margin-bottom: 10px;
+  color: #333;
+  font-size: 16px;
+}
+
+/* Responsive: mejor diseño en pantallas pequeñas */
+@media (max-width: 768px) {
+  #empleados > div {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.btn-eliminar svg {
+  width: 12px;
+  height: 12px;
+  stroke: red;
+}
+
+.btn-eliminar:hover {
+  background-color: #ffe6e6;
+  border-radius: 4px;
+}
+
+h3 {
+  margin-top: 30px;
+  color: #333;
+}
+select {
+  width: 100%;
+  padding: 6px;
+  margin-top: 4px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
